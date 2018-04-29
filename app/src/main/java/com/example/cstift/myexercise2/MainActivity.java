@@ -1,6 +1,7 @@
 package com.example.cstift.myexercise2;
 
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -46,15 +47,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                testData.add(BirthdayContact.create("Bob Dylan", new GregorianCalendar(1965, 4, 16).getTime()));
-                testData.add(BirthdayContact.create("Clemens Stift", new GregorianCalendar(1992, 2, 22).getTime()));
-                testData.add(BirthdayContact.create("Elisabeth Bergler", new GregorianCalendar(1996, 10, 14).getTime()));
-                testData.add(BirthdayContact.create("Axel Böhm", new GregorianCalendar(1991, 11, 20).getTime()));
+                testData.add(BirthdayContact.create("Bob Dylan", new GregorianCalendar(1965, 3, 16).getTime()));
+                testData.add(BirthdayContact.create("Clemens Stift", new GregorianCalendar(1992, 1, 22).getTime()));
+                testData.add(BirthdayContact.create("Elisabeth Bergler", new GregorianCalendar(1996, 9, 14).getTime()));
+                testData.add(BirthdayContact.create("Axel Böhm", new GregorianCalendar(1991, 10, 20).getTime()));
 
                 //TODO Ask for permission to load data - separate class. + Add it to the manifest.
 
                 //Push data into recyclerView.
                 adapter.updateDataSet(testData);
+
+                Snackbar.make(mainFab, "Data has been loaded", Snackbar.LENGTH_LONG).show();
 
                 // If data is loaded, hide the empty text
                 if (((RecyclerViewAdapter) mainRecyclerView.getAdapter()).ContactsToShow() == false){
