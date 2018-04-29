@@ -30,6 +30,9 @@ dependencies {
     implementation "com.android.support:recyclerview-v7:$supportLibVersion"
     implementation "com.android.support:cardview-v7:$supportLibVersion"
 
+    provided 'com.google.auto.value:auto-value:1.2'
+    annotationProcessor 'com.google.auto.value:auto-value:1.2'
+
     testImplementation 'junit:junit:4.12'
 
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
